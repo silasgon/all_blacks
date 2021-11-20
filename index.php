@@ -113,15 +113,15 @@ $queryDados = mysqli_query($conexao, $buscarDados)
           <form method="post" action="cadastro.php" class="was-validated" novalidate>
             <div class="form-group">
               <label for="nome">Nome</label>
-              <input type="text" class="form-control" id="nome" placeholder="Nome do torcedor" required>
+              <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome do torcedor" required>
             </div>
             <div class="form-group">
               <label for="documento">Documento</label>
-              <input type="text" class="form-control" id="documento" placeholder="000.000.000-00" required>
+              <input type="text" class="form-control" id="documento" name="documento" placeholder="000.000.000-00" required>
             </div>
             <div class="form-group">
               <label for="email">Email</label>
-              <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+              <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" required>
             </div>
             <!-- Telefone -->
             <hr>
@@ -129,11 +129,11 @@ $queryDados = mysqli_query($conexao, $buscarDados)
             <div class="form-row">
               <div class="col-2">
                 <label for="ddd">DDD</label>
-                <input type="text" class="form-control" id="ddd" placeholder="00" required>
+                <input type="text" class="form-control" name="ddd" id="ddd" placeholder="00" required>
               </div>
               <div class="col-4">
                 <label for="telefone">Telefone</label>
-                <input type="text" class="form-control" id="telefone" placeholder="00000000" required>
+                <input type="text" class="form-control" name="telefone" id="telefone" placeholder="00000000" required>
               </div>
             </div>
             <hr>
@@ -141,22 +141,22 @@ $queryDados = mysqli_query($conexao, $buscarDados)
             <div class="form-row">
               <div class="col-4">
                 <label for="cep">CEP</label>
-                <input type="text" class="form-control" id="cep" placeholder="00000-000" required>
+                <input type="text" class="form-control" name="cep" id="cep" placeholder="00000-000" required>
               </div>
               <div class="col-8">
                 <label for="endereco">Endereço</label>
-                <input type="text" class="form-control" id="endereco" placeholder="Endereço do torcedor" required>
+                <input type="text" class="form-control" id="endereco" name="endereco" placeholder="Endereço do torcedor" required>
               </div>
             </div>
             <br>
             <div class="form-row">
               <div class="col-8">
                 <label for="cidade">Cidade</label>
-                <input type="text" class="form-control" id="cidade" placeholder="Cidade do torcedor" required>
+                <input type="text" class="form-control" name="cidade" placeholder id="cidade" placeholder="Cidade do torcedor" required>
               </div>
               <div class="col-4">
-                <label for="estado">Estado - UF</label>
-                <select class="form-control" id="estado" required>
+                <label for="uf">Estado - UF</label>
+                <select class="form-control" id="uf" name="uf" placeholder required>
                   <option value="">Escolha um estado</option>
                   <option value="AC">AC</option>
                   <option value="AL">AL</option>
@@ -194,11 +194,11 @@ $queryDados = mysqli_query($conexao, $buscarDados)
                 <label for="email">Situação do cadastro</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="ativo" value="1" checked>
+                <input class="form-check-input" type="checkbox" id="ativo" name="ativo" value="1" checked>
                 <label class="form-check-label" for="ativo">Ativo</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="ativo" value="">
+                <input class="form-check-input" type="checkbox" name="ativo" id="ativo" value="">
                 <label class="form-check-label" for="ativo">Desativado</label>
               </div>
             </div>

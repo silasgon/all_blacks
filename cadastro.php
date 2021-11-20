@@ -1,9 +1,7 @@
 <?php
 
-include 'config.php';
+include './config.php';
 
-
-/* 
 $nome = $_POST['nome'];
 $documento = $_POST['documento'];
 $email = $_POST['email'];
@@ -15,11 +13,18 @@ $cidade = $_POST['cidade'];
 $uf = $_POST['uf'];
 $ativo = $_POST['ativo'];
 
-$recebendoDados = "INSERT INTO 
-torcedores
-VALUES('','$nome', '$documento', '$email', '$ddd', '$telefone', '$cep', '$endereco', '$cidade', '$uf', '$ativo')";
-$queryCadastro = mysqli_query($conexao, $recebendoDados);
- */
+
+$recebendoDados = "INSERT INTO torcedores 
+
+VALUES ('$nome', '$documento', '$email', '$ddd', '$telefone', '$cep', '$endereco', '$cidade', '$uf', '$ativo')";
+
+print_r($recebendoDados);
+
+$queryCadastro = mysqli_query($conexao, $recebendoDados); 
+
+
+/* 
+$conn = getConnection();
 
 $nome = filter_input(INPUT_POST, 'nome');
 $documento = filter_input(INPUT_POST, 'documento');
@@ -32,21 +37,29 @@ $cidade = filter_input(INPUT_POST, 'cidade');
 $uf = filter_input(INPUT_POST, 'uf');
 $ativo = filter_input(INPUT_POST, 'ativo');
 
-$sql = $pdo->prepare('INSERT INTO torcedores (id,nome, documento, email, ddd, telefone, cep, endereco, cidade, uf, ativo)
- VALUES (:id,:nome, :documento, :email, :ddd, :telefone, :cep, :endereco, :cidade, :uf, :ativo)');
 
- $sql->bindValue(':id', $id);
- $sql->bindValue(':nome', $nome);
- $sql->bindValue(':documento', $documento);
- $sql->bindValue(':email', $email);
- $sql->bindValue(':ddd', $ddd);
- $sql->bindValue(':telefone', $telefone);
- $sql->bindValue(':cep', $cep);
- $sql->bindValue(':endereco', $endereco);
- $sql->bindValue(':cidade', $cidade);
- $sql->bindValue(':uf', $uf);
- $sql->bindValue(':ativo', $ativo);
- $sql->execute();
+$sql = 'INSERT INTO torcedores (nome, documento, email, ddd, telefone, cep, endereco, cidade, uf, ativo)
+ VALUES (:nome, :documento, :email, :ddd, :telefone, :cep, :endereco, :cidade, :uf, :ativo)';
 
- header('Location: index.php');
+ $stmt = $conn->prepare($sql);
+
+ $stmt->bindValue(':nome', $nome);
+ $stmt->bindValue(':documento', $documento);
+ $stmt->bindValue(':email', $email);
+ $stmt->bindValue(':ddd', $ddd);
+ $stmt->bindValue(':telefone', $telefone);
+ $stmt->bindValue(':cep', $cep);
+ $stmt->bindValue(':endereco', $endereco);
+ $stmt->bindValue(':cidade', $cidade);
+ $stmt->bindValue(':uf', $uf);
+ $stmt->bindValue(':ativo', $ativo);
+
+ if($stmt->execute()){
+     echo 'Cadastrado com sucesso';
+ }else{
+     echo 'Erro ao salvar';
+ }
+ */
+
+// header('Location: index.php');
 ?>

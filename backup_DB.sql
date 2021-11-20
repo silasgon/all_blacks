@@ -23,20 +23,20 @@ CREATE TABLE IF NOT EXISTS `torcedores` (
   `nome` varchar(100) NOT NULL,
   `documento` varchar(11) NOT NULL,
   `email` varchar(20) DEFAULT NULL,
-  `ddd` int(2) DEFAULT NULL,
-  `telefone` int(8) DEFAULT NULL,
+  `telefone` varchar(15) DEFAULT NULL,
   `cep` varchar(9) NOT NULL,
   `endereco` varchar(30) NOT NULL,
   `cidade` varchar(30) NOT NULL,
   `uf` varchar(2) NOT NULL,
   `ativo` int(1) DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
--- Copiando dados para a tabela allblacks_db.torcedores: ~0 rows (aproximadamente)
+-- Copiando dados para a tabela allblacks_db.torcedores: ~2 rows (aproximadamente)
 /*!40000 ALTER TABLE `torcedores` DISABLE KEYS */;
-INSERT INTO `torcedores` (`id`, `nome`, `documento`, `email`, `ddd`, `telefone`, `cep`, `endereco`, `cidade`, `uf`, `ativo`) VALUES
-	(1, 'athos tavares', '22233344456', 'athos@email.com', 63, 99997777, '77023-159', 'Av. de baixo do mercado, 55', 'Palmas', 'TO', 1);
+INSERT INTO `torcedores` (`id`, `nome`, `documento`, `email`, `telefone`, `cep`, `endereco`, `cidade`, `uf`, `ativo`) VALUES
+	(1, 'athos tavares', '22233344456', 'athos@email.com', '99997777', '77023-159', 'Av. de baixo do mercado, 55', 'Palmas', 'TO', 1),
+	(2, 'Silas Reis', '11111111111', 'silas@gmail.com', '99999999', '77777-155', 'av. do cais', 'novoacordo', 'TO', 1);
 /*!40000 ALTER TABLE `torcedores` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
